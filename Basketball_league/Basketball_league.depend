@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1546844440 source:c:\users\milan\desktop\basketball_league\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
