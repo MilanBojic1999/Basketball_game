@@ -19,7 +19,7 @@ Tim* napravi_tim(char naziv[],int napad,int odbrana){
 
 void Info_meni(){
     printf("1) Ucitaj iz fajla\n");
-    printf("2) Dodaj na fajl\n");
+    printf("2) Dodaj na fajl timove\n");
     printf("3) Prepisi preko fajla\n");
     printf("4) Odigraj mec\n");
     printf("0) Vidi rezultate");
@@ -36,19 +36,36 @@ Tim* napravi_ligu(Tim* stablo,Tim* novi){
     while(trenutni->sledeci && strcmp(trenutni->sledeci->naziv,novi->naziv)<0){
         trenutni=trenutni->sledeci;
     }
-    novi->sledeci=trenutni->sledeci;
-    trenutni->sledeci=novi;
+        novi->sledeci=trenutni->sledeci;
+        trenutni->sledeci=novi;
     return stablo;
 }
 
 void info(char *ime,int *n,int *o){
     printf("Kako se zove vas tim? ");
-    scanf("%s",ime);
+    scanf(" %[^\n]",ime);
     printf("Kakav je napad tima? ");
     scanf("%d",n);
     printf("Kakva je odbrana time? ");
     scanf("%d",o);
     printf("\n");
+}
+Tim* otvori_fajl(){
+    Tim* lista=NULL;
+    char *token,naziv[25],linija[100];
+    int napad,odbrana;
+    FILE* f=fopen("Kosarka.txt","r");
+    while(fgets(linija,100,f)==linija){
+        token=strtok(linija,"-");
+        strcpy(naziv,token);
+        token=strtok(NULL,":");
+        napad= atoi(token);
+        token=strtok(NULL,":");
+        odbrana=atoi(token);
+        lista=napravi_ligu(lista,napravi_tim(naziv,napad,odbrana));
+    }
+    fclose(f);
+    return lista;
 }
 
 void dodaj_na_fajl(Tim* stablo){
@@ -97,9 +114,11 @@ int main()
         scanf("%d",&n);
         switch(n){
             case 1:
+                predstavnik=otvori_fajl();
                 break;
             case 2:
                 predstavnik=dodaj_u_listu(predstavnik);
+                dodaj_na_fajl(predstavnik);
                 break;
 
         }
