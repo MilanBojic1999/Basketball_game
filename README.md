@@ -6,3 +6,4 @@ This is project with a goal of making a simulation of basketball game with some 
 
 This project will be done in few programming languages:
   1. C
+  2. Java
