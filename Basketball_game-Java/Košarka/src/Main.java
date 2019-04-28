@@ -4,10 +4,16 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
 
 public class Main {
+	private static List<Klub> klubovi;
+	static {
+		klubovi=new ArrayList<>();
+	}
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Liga liga = new Liga("Super liga", 15);
@@ -17,7 +23,7 @@ public class Main {
             i = sc.nextInt();
             switch (i) {
                 case 1: {
-                    Tim tim = Main.upisiTim(sc);
+                    Tim tim = Main.upisiKlub(sc);
                     liga.dodajTim(tim);
                     break;
                 }
@@ -76,8 +82,15 @@ public class Main {
         		"9) Odigraj pley-off\n" +
         		"0) Izađite iz programa\n");
     }
-
-    private static Tim upisiTim(Scanner sc) {
+    public static void dodajKlub(Klub klub) {
+    	if(klubovi.contains(klub)) {
+    		System.out.println("Već postoji klub u sistemu");
+    		return;
+    	}
+        klubovi.add(klub);
+    }
+    
+    private static Tim upisiKlub(Scanner sc) {
         sc.nextLine();
         System.out.print("Kako se zove vas tim: ");
         String ime = sc.nextLine();
@@ -86,14 +99,18 @@ public class Main {
         System.out.print("Kakva je odbrana vaseg tima: ");
         int odb = sc.nextInt();
         sc.nextLine();
-        return new Tim(ime, nap, odb);
+        Klub klub=new Klub(ime, nap, odb);
+        dodajKlub(klub);
+        return new Tim(klub);
+        
     }
     private static Tim napraviTim(String linija) {
     	String[] clan=linija.split(" - ");
     	String[] stats=clan[1].split(" : ");
     	int napad=Integer.parseInt(stats[0]);
     	int odbrana=Integer.parseInt(stats[1]);
-    	return new Tim(clan[0], napad,odbrana);
+    	Klub klub=new Klub(clan[0], napad,odbrana);
+    	return new Tim(klub);
     }
     
    public static class RadSaFajlom{

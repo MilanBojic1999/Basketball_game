@@ -1,3 +1,8 @@
+/*
+ * Liga se sastoji od Timova i Mečeva između timova
+ * Svaka liga ima određen broj Timova koji može da primis
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -6,7 +11,7 @@ import java.util.Scanner;
 
 public class Liga {
     private String naziv;
-    private ArrayList<Tim> tabela;
+    private List<Tim> tabela;
     private List<Mec> mecevi;
     private int velLige;
 
@@ -21,6 +26,8 @@ public class Liga {
     	if(tabela.contains(tim)) return;
         if (tabela.size() < velLige) {
             tabela.add(tim);
+            mecevi.clear();
+            restartujLigu();
         } else {
             System.out.println("Popunjena je kvota timova");
         }
@@ -84,9 +91,15 @@ public class Liga {
     	Tim finalista2=polufinale2.odigrajMec();
     	Mec finale=new Mec(finalista1,finalista2);
     	Tim pobednik=finale.odigrajMec();
-    	System.out.println("Šampion je "+pobednik.getNaziv());
+    	System.out.println("Šampion je "+pobednik.getKlub().getNaziv());
+    	restartujLigu();
     }
     
+    public void restartujLigu() {
+    	for(Tim tim:tabela) {
+    		tim.restart();
+    	}
+    }
     @Override
     public String toString() {
     	return this.naziv+" "+this.tabela.size()+" timova";
@@ -97,7 +110,7 @@ public class Liga {
 
 			@Override
 			public int compare(Tim tim1, Tim tim2) {
-				return tim1.getNaziv().compareTo(tim2.getNaziv());
+				return tim1.getKlub().getNaziv().compareTo(tim2.getKlub().getNaziv());
 			}
 		});
     }
