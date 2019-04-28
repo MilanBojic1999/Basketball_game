@@ -1,0 +1,134 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ListIterator;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Liga liga = new Liga("Super liga", 15);
+        int i;
+        do {
+            Main.getInfo();
+            i = sc.nextInt();
+            switch (i) {
+                case 1: {
+                    Tim tim = Main.upisiTim(sc);
+                    liga.dodajTim(tim);
+                    break;
+                }
+                case 2: {
+                    liga.napraviMeceve();
+                    break;
+                }
+                case 3: {
+                    liga.ispisiTabelu();
+                    break;
+                }
+                case 4: {
+                    liga.ispisiMeceve();
+                    break;
+                }
+                case 5: {
+                    liga.odigrajMeceve();
+                    break;
+                }
+                case 6: {
+                    liga.odigrajSpecMec(sc);
+                    break;
+                }
+                case 7:{
+                	RadSaFajlom.ucitajTimove(liga);
+                	break;
+                }
+                case 8:{
+                	RadSaFajlom.upisiTimove(liga);
+                	break;
+                }
+                case 9:{
+                	liga.odigrajPlayOff();
+                	break;
+                }
+                case 0: {
+                	sc.nextLine();
+                	sc.close();
+                    break;
+                }
+                default:
+                    System.out.println("Nema takvih komandi");
+            }
+        } while (i != 0);
+    }
+
+    private static void getInfo() {
+        System.out.print("1) Napravite tim\n" + 
+        		"2) Napravite meceve\n" + 
+        		"3) Ispisite tabelu\n" + 
+        		"4) Ispisite meceve\n" + 
+        		"5) Odigraj sve meceve\n" + 
+        		"6) Odigrajte specifični mec\n" + 
+        		"7) Ucitajte Timova sa fajla\n" +
+        		"8) Upisite Timove u Fajl\n" +
+        		"9) Odigraj pley-off\n" +
+        		"0) Izađite iz programa\n");
+    }
+
+    private static Tim upisiTim(Scanner sc) {
+        sc.nextLine();
+        System.out.print("Kako se zove vas tim: ");
+        String ime = sc.nextLine();
+        System.out.print("Kakav je napad vaseg tima: ");
+        int nap = sc.nextInt();
+        System.out.print("Kakva je odbrana vaseg tima: ");
+        int odb = sc.nextInt();
+        sc.nextLine();
+        return new Tim(ime, nap, odb);
+    }
+    private static Tim napraviTim(String linija) {
+    	String[] clan=linija.split(" - ");
+    	String[] stats=clan[1].split(" : ");
+    	int napad=Integer.parseInt(stats[0]);
+    	int odbrana=Integer.parseInt(stats[1]);
+    	return new Tim(clan[0], napad,odbrana);
+    }
+    
+   public static class RadSaFajlom{
+    	private static boolean ucitano=false;
+    	static void ucitajTimove(Liga liga) {
+    		File ulaz=new File("Košarka"+File.separator+"Timovi.txt");
+    		try(BufferedReader bReader=new BufferedReader(new FileReader(ulaz))){
+    			System.out.println(bReader.readLine());
+    			String linija=bReader.readLine();
+    			do {
+    				liga.dodajTim(napraviTim(linija));
+        			linija=bReader.readLine();
+    			}while(linija!=null);
+    		}catch (IOException e) {
+    			e.printStackTrace();
+			}finally {
+				ucitano=true;
+			}
+    	}
+    	static void upisiTimove(Liga liga) {
+    		File izlaz=new File("Košarka"+File.separator+"Timovi.txt");
+    		if(!ucitano)	
+    			ucitajTimove(liga);
+    		try(BufferedWriter bWriter=new BufferedWriter(new FileWriter(izlaz))) {
+    			liga.SortByName();
+    			bWriter.write(liga.toString());
+    			bWriter.newLine();
+    			ListIterator<Tim> timovi=liga.getTabela().listIterator();
+    			while(timovi.hasNext()) {
+    				bWriter.write(timovi.next().toString());
+    				bWriter.newLine();
+    			}
+    		}catch (IOException e) {
+    			e.printStackTrace();
+    		}
+    	}
+    }
+}
