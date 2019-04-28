@@ -28,5 +28,6 @@ public class Test {
         jelenSuper.ispisiTabelu();
         jelenSuper.odigrajMeceve();
         jelenSuper.ispisiTabelu();
+        Main.RadSaFajlom.upisiTimove(jelenSuper);
     }
 }

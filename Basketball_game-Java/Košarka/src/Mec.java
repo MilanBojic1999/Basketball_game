@@ -13,7 +13,7 @@ public class Mec {
         this.tim2 = tim2;
     }
 
-    public void odigrajMec() {
+    public Tim odigrajMec() {
         this.ispisiMec();
         int napad1 = this.tim1.getNapad() - this.tim2.getOdbrana() + 50;
         int napad2 = this.tim2.getNapad() - this.tim1.getOdbrana() + 50;
@@ -37,10 +37,12 @@ public class Mec {
             System.out.println("Pobedio je prvi tim");
             tim1.dodajRezultat(2, rezultat1, rezultat2);
             tim2.dodajRezultat(1, rezultat2, rezultat1);
+            return tim1;
         } else {
             System.out.println("Pobedio je drugi tim");
             tim2.dodajRezultat(2, rezultat2, rezultat1);
             tim1.dodajRezultat(1, rezultat1, rezultat2);
+            return tim2;
         }
     }
 

@@ -1,3 +1,4 @@
+
 public class Tim implements Comparable<Tim> {
     private String naziv;
     private int napad;
@@ -20,7 +21,11 @@ public class Tim implements Comparable<Tim> {
         return this.napad;
     }
 
-    public int getOdbrana() {
+    public String getNaziv() {
+		return naziv;
+	}
+
+	public int getOdbrana() {
 
         return this.odbrana;
     }
@@ -41,12 +46,12 @@ public class Tim implements Comparable<Tim> {
 
     @Override
     public String toString() {
-        return this.naziv + " " + this.napad + ":" + this.odbrana;
+        return this.naziv + " - " + this.napad + " : " + this.odbrana;
     }
 
     public String dajRezultate() {
 
-        return this.naziv + "\t| " + this.datiKosevi + ":" + this.primljeniKosevi + " - " + this.bodovi;
+        return String.format("%15s", this.naziv) + "\t| " + this.datiKosevi + ":" + this.primljeniKosevi + " - " + this.bodovi;
     }
 
     @Override
@@ -57,5 +62,12 @@ public class Tim implements Comparable<Tim> {
             if((this.getRazlikaKoseva())>tim.getRazlikaKoseva()) return -1;
             else return 1;
         }
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+    	if(obj==null) return false;
+    	if(!(obj instanceof Tim)) return false;
+    	return this.naziv.equalsIgnoreCase(((Tim)obj).getNaziv());
     }
 }
