@@ -1,35 +1,25 @@
+/*
+ * Prestavljanje Kluba u određenoj ligi
+ * Tim ne postoji bez kluba i van lige
+ * pored kluba, Tim određuju dati i primljeni koševi, kao i osvojeni bodovi
+ */
 
 public class Tim implements Comparable<Tim> {
-    private String naziv;
-    private int napad;
-    private int odbrana;
+    private Klub klub;
     private int datiKosevi;
     private int primljeniKosevi;
     private int bodovi;
 
-    public Tim(String naziv, int napad, int odbrana) {
-        this.naziv = naziv;
-        this.napad = napad;
-        this.odbrana = odbrana;
+    public Tim(Klub klub) {
+        this.klub=klub;
         this.datiKosevi = 0;
         this.primljeniKosevi = 0;
         this.bodovi = 0;
     }
-
-    public int getNapad() {
-
-        return this.napad;
-    }
-
-    public String getNaziv() {
-		return naziv;
+    public Klub getKlub() {
+		return klub;
 	}
-
-	public int getOdbrana() {
-
-        return this.odbrana;
-    }
-
+    
     public int getBodovi(){
         return this.bodovi;
     }
@@ -43,15 +33,15 @@ public class Tim implements Comparable<Tim> {
         this.datiKosevi += dKos;
         this.primljeniKosevi += pKos;
     }
-
     @Override
     public String toString() {
-        return this.naziv + " - " + this.napad + " : " + this.odbrana;
+    	// TODO Auto-generated method stub
+    	return klub.toString();
     }
 
     public String dajRezultate() {
 
-        return String.format("%15s", this.naziv) + "\t| " + this.datiKosevi + ":" + this.primljeniKosevi + " - " + this.bodovi;
+        return String.format("%15s", this.klub.getNaziv()) + "\t| " + this.datiKosevi + ":" + this.primljeniKosevi + " - " + this.bodovi;
     }
 
     @Override
@@ -68,6 +58,11 @@ public class Tim implements Comparable<Tim> {
     public boolean equals(Object obj) {
     	if(obj==null) return false;
     	if(!(obj instanceof Tim)) return false;
-    	return this.naziv.equalsIgnoreCase(((Tim)obj).getNaziv());
+    	return klub.equals(((Tim)obj).getKlub());
+    }
+    public void restart() {
+    	this.datiKosevi = 0;
+        this.primljeniKosevi = 0;
+        this.bodovi = 0;
     }
 }

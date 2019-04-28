@@ -1,3 +1,10 @@
+/*
+ * Meč između dva tima se održava po pozivu
+ * Rezultat se udelom određuje u odnosu Atributa Timova a udelom i rendom fakorom
+ * Pobedik dobija 2 poena, a gubitnik 1 poen
+ * Posle meca Timovima se dodaju primljeni i dadi koševi
+ */
+
 import java.util.Random;
 
 public class Mec {
@@ -15,8 +22,8 @@ public class Mec {
 
     public Tim odigrajMec() {
         this.ispisiMec();
-        int napad1 = this.tim1.getNapad() - this.tim2.getOdbrana() + 50;
-        int napad2 = this.tim2.getNapad() - this.tim1.getOdbrana() + 50;
+        int napad1 = this.tim1.getKlub().getNapad() - this.tim2.getKlub().getOdbrana() + 50;
+        int napad2 = this.tim2.getKlub().getNapad() - this.tim1.getKlub().getOdbrana() + 50;
         int rezultat1 = 0, rezultat2 = 0;
         Random r = new Random();
         for (int vreme = 0; vreme < 100; vreme++) {
