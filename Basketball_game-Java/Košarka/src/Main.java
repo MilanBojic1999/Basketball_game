@@ -16,8 +16,9 @@ public class Main {
 	}
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Liga liga = new Liga("Super liga", 15);
+        AbsLiga liga = new LigaGrupe("Super liga", 4,10);
         int i;
+        System.out.println(liga.toString().toUpperCase());
         do {
             Main.getInfo();
             i = sc.nextInt();
@@ -115,7 +116,7 @@ public class Main {
     
    public static class RadSaFajlom{
     	private static boolean ucitano=false;
-    	static void ucitajTimove(Liga liga) {
+    	static void ucitajTimove(AbsLiga liga) {
     		File ulaz=new File("Košarka"+File.separator+"Timovi.txt");
     		try(BufferedReader bReader=new BufferedReader(new FileReader(ulaz))){
     			System.out.println(bReader.readLine());
@@ -130,7 +131,7 @@ public class Main {
 				ucitano=true;
 			}
     	}
-    	static void upisiTimove(Liga liga) {
+    	static void upisiTimove(AbsLiga liga) {
     		File izlaz=new File("Košarka"+File.separator+"Timovi.txt");
     		if(!ucitano)	
     			ucitajTimove(liga);
@@ -138,11 +139,10 @@ public class Main {
     			liga.SortByName();
     			bWriter.write(liga.toString());
     			bWriter.newLine();
-    			ListIterator<Tim> timovi=liga.getTabela().listIterator();
-    			while(timovi.hasNext()) {
-    				bWriter.write(timovi.next().toString());
-    				bWriter.newLine();
-    			}
+                for (Tim tim : liga.getTimovi()) {
+                    bWriter.write(tim.toString());
+                    bWriter.newLine();
+                }
     		}catch (IOException e) {
     			e.printStackTrace();
     		}

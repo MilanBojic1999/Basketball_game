@@ -12,7 +12,7 @@ public class Test {
         Klub mega = new Klub("Mega Leks", 83, 69);
         Klub mor = new Klub("Mornar", 50, 99);
 
-        Liga jelenSuper = new Liga("Jelen super liga", 10);
+        LigaTabela jelenSuper = new LigaTabela("Jelen super liga", 10,8);
 
         jelenSuper.dodajTim(new Tim(zvezda));
         jelenSuper.dodajTim(new Tim(rad));
