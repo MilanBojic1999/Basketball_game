@@ -18,7 +18,7 @@ public class LigaTabela extends AbsLiga{
         super(naziv);
         this.tabela = new ArrayList<Tim>(velicina);
         this.velLige = velicina;
-        this.brPlayOffTimova=brPlayOffTimova;
+        this.brPlayOffTimova= MainPre.stepenDvojke(brPlayOffTimova);
     }
 
     public void dodajTim(Tim tim) {
@@ -109,7 +109,7 @@ public class LigaTabela extends AbsLiga{
     }
     @Override
     public String toString() {
-    	return this.naziv+" "+this.tabela.size()+" timova";
+    	return this.naziv+" - "+this.tabela.size()+" - timova - "+this.brPlayOffTimova;
     }
     
     public void SortByName() {

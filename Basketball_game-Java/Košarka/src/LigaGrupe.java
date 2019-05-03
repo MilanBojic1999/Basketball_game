@@ -7,7 +7,7 @@ public class LigaGrupe extends AbsLiga  {
 
     public LigaGrupe(String naziv, int brojGrupa, int brojTimovaPoGrupi) {
         super(naziv);
-        this.brojGrupa = brojGrupa;
+        this.brojGrupa = MainPre.stepenDvojke(brojGrupa);
         this.brojTimovaPoGrupi = brojTimovaPoGrupi;
         grupe=new HashMap<>();
         for(int i=0;i<brojGrupa;i++){
@@ -67,8 +67,12 @@ public class LigaGrupe extends AbsLiga  {
     public void odigrajPlayOff() {
         List<Tim> pobednici=new ArrayList<>();
         for(List<Tim> grupa:grupe.values()){
-            pobednici.add(grupa.get(0));
-            pobednici.add(grupa.get(1));
+            try {
+                pobednici.add(grupa.get(0));
+                pobednici.add(grupa.get(1));
+            }catch (IndexOutOfBoundsException e){
+                System.out.println(e.getMessage());
+            }
         }
         Random r=new Random();
         int i=1;
@@ -142,6 +146,6 @@ public class LigaGrupe extends AbsLiga  {
 
     @Override
     public String toString() {
-        return this.naziv+" "+this.brojGrupa+" grupa sa po "+this.brojTimovaPoGrupi+" timova";
+        return this.naziv+" - "+this.brojGrupa+" - grupa sa po - "+this.brojTimovaPoGrupi+" - timova";
     }
 }

@@ -4,12 +4,23 @@ import java.util.List;
 import java.util.Scanner;
 
 public abstract class AbsLiga {
+    private boolean sacuvan;
     protected String naziv;
     protected List<Mec> mecevi;
+
 
     public AbsLiga(String naziv) {
         this.naziv = naziv;
         mecevi=new ArrayList<>();
+        sacuvan=false;
+    }
+
+    public boolean isSacuvan() {
+        return sacuvan;
+    }
+
+    public void setSacuvan(boolean sacuvan) {
+        this.sacuvan = sacuvan;
     }
 
     public abstract void dodajTim(Tim tim);
@@ -46,5 +57,10 @@ public abstract class AbsLiga {
         }
     }
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null ) return  false;
+        if(!(obj instanceof AbsLiga)) return false;
+        return naziv.equals(((AbsLiga)obj).getNaziv());
+    }
 }
