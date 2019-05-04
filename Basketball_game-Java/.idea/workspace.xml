@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ae91131-bf42-44a1-a0c6-cafea04971e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Košarka/src/MainPre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Košarka/src/RadSaFajlovima.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Košarka/src/AbsLiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/Košarka/src/AbsLiga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Košarka/src/LigaGrupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/Košarka/src/LigaGrupe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Košarka/src/LigaTabela.java" beforeDir="false" afterPath="$PROJECT_DIR$/Košarka/src/LigaTabela.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Košarka/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Košarka/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Košarka/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Košarka/src/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Košarka/AbsLiga.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Košarka/AbsLiga.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Košarka/LigaGrupe$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Košarka/LigaGrupe$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Košarka/LigaGrupe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Košarka/LigaGrupe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Košarka/LigaTabela.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Košarka/LigaTabela.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Košarka/Main$RadSaFajlom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Košarka/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Košarka/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Košarka/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Košarka/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Košarka/Files/SistemLiga" beforeDir="false" afterPath="$PROJECT_DIR$/Košarka/Files/SistemLiga" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Košarka/src/RadSaFajlovima.java" beforeDir="false" afterPath="$PROJECT_DIR$/Košarka/src/RadSaFajlovima.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Košarka/RadSaFajlovima.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Košarka/RadSaFajlovima.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,31 +20,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Košarka/src/MainPre.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Košarka/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Košarka/src/RadSaFajlovima.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+            <state relative-caret-position="136">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,30 +32,8 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Košarka/Files/KSS Letnja Liga">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="35" selection-start-column="35" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Košarka/src/Menus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Košarka/src/Kreator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Košarka/Files/Aba Liga">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -118,14 +63,14 @@
         <option value="$PROJECT_DIR$/Košarka/src/MainPre.java" />
         <option value="$PROJECT_DIR$/Košarka/src/Menus.java" />
         <option value="$PROJECT_DIR$/Košarka/src/Kreator.java" />
-        <option value="$PROJECT_DIR$/Košarka/src/Main.java" />
-        <option value="$PROJECT_DIR$/Košarka/Files/SistemLiga" />
-        <option value="$PROJECT_DIR$/Košarka/src/RadSaFajlovima.java" />
         <option value="$PROJECT_DIR$/Košarka/Files/KSS Letnja Liga" />
+        <option value="$PROJECT_DIR$/Košarka/src/Main.java" />
+        <option value="$PROJECT_DIR$/Košarka/src/RadSaFajlovima.java" />
+        <option value="$PROJECT_DIR$/Košarka/Files/SistemLiga" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -136,6 +81,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,7 +114,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -238,6 +183,9 @@
       <workItem from="1556794732220" duration="448000" />
       <workItem from="1556819097804" duration="8047000" />
       <workItem from="1556911722450" duration="5042000" />
+      <workItem from="1556962516021" duration="467000" />
+      <workItem from="1556963013584" duration="1270000" />
+      <workItem from="1556982502565" duration="456000" />
     </task>
     <task id="LOCAL-00001" summary="League is separated into 2 types:&#10; -League with one table&#10; -League with groups">
       <created>1556660375623</created>
@@ -250,7 +198,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28017000" />
+    <option name="totallyTimeSpent" value="30210000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -264,7 +212,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1040" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2711111" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -416,50 +364,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Košarka/Files/KSS Liga">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Košarka/src/MainPre.java">
+    <entry file="file://$PROJECT_DIR$/Košarka/Files/KSS Liga" />
+    <entry file="file://$PROJECT_DIR$/Košarka/src/Kreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Košarka/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Košarka/Files/KSS Letnja Liga" />
     <entry file="file://$PROJECT_DIR$/Košarka/src/Menus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Košarka/src/MainPre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/FileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Košarka/Files/SuperLIga Srbije" />
+    <entry file="file://$PROJECT_DIR$/Košarka/Files/Košarkaška Supetliga Srbije">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Košarka/Files/SistemLiga">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Košarka/src/Kreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Košarka/src/RadSaFajlovima.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="181">
           <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -467,12 +415,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Košarka/Files/KSS Letnja Liga">
+    <entry file="file://$PROJECT_DIR$/Košarka/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        <state relative-caret-position="136">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Košarka/Files/Aba Liga">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

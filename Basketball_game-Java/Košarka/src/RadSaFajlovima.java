@@ -67,8 +67,9 @@ public class RadSaFajlovima {
         List<String> izlaz=new ArrayList<>();
         try(BufferedReader buff=new BufferedReader(new FileReader(file))){
             String linija=buff.readLine();
-            if(linija==null) return izlaz;
+            if(file.length()==0) return izlaz;
             do {
+                if(linija==null) continue;
                 izlaz.add(linija);
                 String[] info=linija.split(" - ");
                 UcitavanjeLige(info[0]);
