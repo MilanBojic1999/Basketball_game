@@ -1,8 +1,6 @@
 package Model;
 
-import Model.DataWork.DataBase;
 import Model.DataWork.RadSaFajlovima;
-import Model.Objects.AbsLiga;
 import View.FirstMenuView;
 import javafx.application.Application;
 import javafx.scene.Scene;

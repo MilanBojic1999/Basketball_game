@@ -1,6 +1,11 @@
 package View;
 
+import Control.NapraviNovuLiguEvent;
+import Model.DataWork.DataBase;
 import Model.Objects.AbsLiga;
+import Model.Objects.LigaGrupe;
+import Model.Objects.LigaTabela;
+import Model.Test;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -63,18 +68,24 @@ public class NapraviLiguView extends Scene {
         pane.setPadding(new Insets(15));
 
         dodajNovTimButton.setOnAction(event -> {
+            makeLeague(string);
             imeLigeField.setDisable(true);
             brojTwoField.setDisable(true);
             brojOneField.setDisable(true);
+            new NapraviNoviTimWindow(liga);
         });
 
         dodajPostojeciTimButton.setOnAction(event -> {
+            makeLeague(string);
             imeLigeField.setDisable(true);
             brojTwoField.setDisable(true);
             brojOneField.setDisable(true);
+            AllExistingTeamsWindow.getInstance(liga);
         });
 
-
+        napraviLiguButton.setOnMouseClicked(event -> {
+            Test.setSceneOntoStage(new UpravljajLigom(liga));
+        });
 
     }
 
@@ -108,5 +119,29 @@ public class NapraviLiguView extends Scene {
 
     public void setLiga(AbsLiga liga) {
         this.liga = liga;
+    }
+
+    public void makeLeague(String string){
+        if(liga!=null)
+            return;
+        try {
+            String info1 = imeLigeField.getText();
+            int info2,info3;
+            if(brojOneField.getText().equals("") || brojTwoField.getText().equals("")){
+                info2=info3=1;
+            }else {
+                info2 = Integer.parseInt(brojOneField.getText());
+                info3 = Integer.parseInt(brojTwoField.getText());
+            }
+            if(string.equals("Liga sa Grupama")){
+                liga=new LigaGrupe(info1,info2,info3);
+
+            }else{
+                liga=new LigaTabela(info1,info2,info3);
+            }
+            DataBase.getInstance().addLiga(liga);
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+        }
     }
 }

@@ -4,8 +4,10 @@ import Model.DataWork.DataBase;
 import Model.Objects.AbsLiga;
 import Model.Objects.LigaGrupe;
 import Model.Objects.LigaTabela;
+import Model.Test;
 import View.NapraviLiguView;
 import View.NapraviNoviTimWindow;
+import View.UpravljajLigom;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 
@@ -23,8 +25,13 @@ public class NapraviNovuLiguEvent implements EventHandler<MouseEvent> {
     public void handle(MouseEvent event) {
         try {
             String info1 = view.getImeLigeField().getText();
-            int info2 = Integer.parseInt(view.getBrojOneField().getText());
-            int info3 = Integer.parseInt(view.getBrojTwoField().getText());
+            int info2,info3;
+            if(view.getBrojOneField().getText().equals("") || view.getBrojTwoField().getText().equals("")){
+                info2=info3=1;
+            }else {
+                info2 = Integer.parseInt(view.getBrojOneField().getText());
+                info3 = Integer.parseInt(view.getBrojTwoField().getText());
+            }
             if(tip.equals("Liga sa Grupama")){
                 liga=new LigaGrupe(info1,info2,info3);
 
@@ -36,6 +43,6 @@ public class NapraviNovuLiguEvent implements EventHandler<MouseEvent> {
         }catch (NumberFormatException e){
             e.printStackTrace();
         }
-        new NapraviNoviTimWindow(view.getLiga());
+
     }
 }

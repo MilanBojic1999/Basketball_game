@@ -1,9 +1,11 @@
 package Control;
 
+import Model.DataWork.RadSaFajlovima;
 import Model.Objects.AbsLiga;
 import Model.Test;
 import View.AllMatchesWindow;
 import View.CostumPanes.PlayOffView;
+import View.FirstMenuView;
 import View.NapraviNoviTimWindow;
 import View.UpravljajLigom;
 import javafx.event.ActionEvent;
@@ -55,6 +57,12 @@ public class ControlLeague implements EventHandler<KeyEvent> {
                 playOffView.populateListView(liga.getMecevi());
                 Test.setSceneOntoStage(new Scene(playOffView));
                 break;
+            case 6:
+                RadSaFajlovima.UpisivanjeLige(liga);
+                Test.setSceneOntoStage(FirstMenuView.getInstance());
+                break;
+            default:
+                System.out.println("Shouldn't happand");
 
         }
     }

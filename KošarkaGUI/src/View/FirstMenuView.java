@@ -74,6 +74,8 @@ public class FirstMenuView extends Scene {
     public static FirstMenuView getInstance() {
         if(instance==null)
             instance=new FirstMenuView();
+        if(instance.ponudjeneLige.isVisible())
+            instance.flipListView();
         return instance;
     }
 
