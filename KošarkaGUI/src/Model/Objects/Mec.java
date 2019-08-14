@@ -31,7 +31,8 @@ public class Mec {
         this.ispisiMec();
         int napad1 = this.tim1.getKlub().getNapad() - this.tim2.getKlub().getOdbrana() + 50;
         int napad2 = this.tim2.getKlub().getNapad() - this.tim1.getKlub().getOdbrana() + 50;
-        int rezultat1 = 0, rezultat2 = 0;
+        rezultat1 = 0;
+        rezultat2 = 0;
         Random r = new Random();
         for (int vreme = 0; vreme < 100; vreme++) {
             if (vreme % 2 == 0) {

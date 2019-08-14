@@ -1,6 +1,7 @@
 package Control;
 
 
+import Model.DataWork.RadSaFajlovima;
 import Model.Test;
 import View.FirstMenuView;
 import View.NapraviLiguView;
@@ -28,6 +29,8 @@ public class PocetniEvent implements EventHandler<ActionEvent> {
                 view.flipListView();
                 break;
             case 2:
+                RadSaFajlovima.upisiLige();
+                RadSaFajlovima.upisiTimove();
                 System.exit(1);
                 break;
             default:

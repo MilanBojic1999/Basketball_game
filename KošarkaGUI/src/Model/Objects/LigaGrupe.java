@@ -71,9 +71,20 @@ public class LigaGrupe extends AbsLiga {
     }
 
     @Override
+    public Tim odigrajPlayoff() {
+        playOffTimovi.clear();
+        for(Mec mec:mecevi)
+            playOffTimovi.add(mec.odigrajMec());
+        if(playOffTimovi.size()==1)
+            return playOffTimovi.get(0);
+        else return null;
+    }
+
+    @Override
     public void napraviPlayOff() {
+        mecevi.clear();
         if(playOffTimovi==null){
-            playOffTimovi=new LinkedList<>();
+            playOffTimovi=new ArrayList<>();
             for(List<Tim> grupa:grupe.values()){
                 try {
                     playOffTimovi.add(grupa.get(0));
@@ -82,24 +93,17 @@ public class LigaGrupe extends AbsLiga {
                     System.out.println(e.getMessage());
                 }
             }
-        }else{
-            playOffTimovi.clear();
-            if(mecevi.size()==1){
-                sampion=mecevi.get(0).odigrajMec();
-                return;
-            }
-            for(Mec mec:mecevi){
-                playOffTimovi.add(mec.odigrajMec());
-            }
         }
-        Random r=new Random();
-        while (playOffTimovi.size() != 0) {
-            int br1 = r.nextInt(playOffTimovi.size());
-            int br2 = r.nextInt(playOffTimovi.size());
-            if (br1 == br2) continue;
-            dodajMec(playOffTimovi.get(br1), playOffTimovi.get(br2));
-            playOffTimovi.remove(Math.max(br1,br2));
-            playOffTimovi.remove(Math.min(br1,br2));
+            Random r=new Random();
+            while (playOffTimovi.size() != 0) {
+                int br1 = r.nextInt(playOffTimovi.size());
+                int br2 = r.nextInt(playOffTimovi.size());
+                if (br1 == br2) continue;
+                dodajMec(playOffTimovi.get(br1), playOffTimovi.get(br2));
+                playOffTimovi.remove(Math.max(br1,br2));
+                playOffTimovi.remove(Math.min(br1,br2));
+
+
         }
         /**List<Tim> pobednici=new ArrayList<>();
         for(List<Tim> grupa:grupe.values()){

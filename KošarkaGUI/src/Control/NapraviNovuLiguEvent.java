@@ -13,6 +13,7 @@ public class NapraviNovuLiguEvent implements EventHandler<MouseEvent> {
     private NapraviLiguView view;
     private String tip;
     private AbsLiga liga;
+
     public NapraviNovuLiguEvent(NapraviLiguView view, String tip) {
         this.view = view;
         this.tip = tip;

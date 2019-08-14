@@ -80,28 +80,31 @@ public class LigaTabela extends AbsLiga {
     }
 
     @Override
+    public Tim odigrajPlayoff() {
+        playOffTimovi.clear();
+        if(mecevi.size()==1){
+            sampion=mecevi.get(0).odigrajMec();
+            return sampion;
+        }
+        for(Mec mec:mecevi){
+            playOffTimovi.add(mec.odigrajMec());
+        }
+        return null;
+    }
+
+    @Override
     public void napraviPlayOff() {
-        int trenBrTimova=1;
+        mecevi.clear();
         if(playOffTimovi==null){
-            playOffTimovi=new LinkedList<>();
-            trenBrTimova=brPlayOffTimova;
+            playOffTimovi=new ArrayList<>();
             for(int i=0;i<brPlayOffTimova;i++){
                 playOffTimovi.add(tabela.get(i));
             }
-        }else{
-            playOffTimovi.clear();
-            if(mecevi.size()==1){
-                sampion=mecevi.get(0).odigrajMec();
-                return;
-            }
-            for(Mec mec:mecevi){
-                playOffTimovi.add(mec.odigrajMec());
-            }
         }
-        for(int i=0, j=playOffTimovi.size()-1;(j-i)>1;i++,j--){
-            mecevi.add(new Mec(playOffTimovi.get(i), playOffTimovi.get(j)));
-        }
-        trenBrTimova/=2;
+            for (int i = 0, j = playOffTimovi.size() - 1; (j - i) > 0; i++, j--) {
+                mecevi.add(new Mec(playOffTimovi.get(i), playOffTimovi.get(j)));
+            }
+
 
     	/**int brTimova=brPlayOffTimova;
     	List<Tim> timovi=new ArrayList<>();

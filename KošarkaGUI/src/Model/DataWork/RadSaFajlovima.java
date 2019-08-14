@@ -54,6 +54,19 @@ public class RadSaFajlovima {
         upisiLige();
     }
 
+    public static void upisiTimove() {
+        File file=new File("Files"+File.separator+"Timovi");
+        try(BufferedWriter buff=new BufferedWriter(new FileWriter(file))){
+            for(Klub klub:DataBase.getInstance().getSviKlubovi()){
+                buff.write(klub.toString());
+                buff.newLine();
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+
    public static AbsLiga UcitavanjeLige(String naziv){
        AbsLiga liga=null;
        File file=new File("Files"+File.separator+naziv);
@@ -119,4 +132,5 @@ public class RadSaFajlovima {
             e.printStackTrace();
         }
    }
+
 }

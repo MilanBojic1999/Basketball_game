@@ -48,8 +48,6 @@ public class Menus {
        list.add("4) Odigraj sve meceve");
        list.add("5) Odigrajte specifični mec");
        list.add("6) Odigraj pley-off");
-       list.add("7) Ucitajte Timova sa fajla");
-       list.add("8) Upisite Timove u Fajl");
        list.add("0) Izađite iz programa");
        return list;
    }

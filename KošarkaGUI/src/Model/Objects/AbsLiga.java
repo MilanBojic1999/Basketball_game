@@ -20,6 +20,7 @@ public abstract class AbsLiga {
     public abstract void napraviMeceve();
     public abstract List<Tim> getTimovi();
     public abstract void napraviPlayOff();
+    public abstract Tim odigrajPlayoff();
     public abstract void restartujLigu();
     public abstract void SortByName();
     public abstract void ispisiTabelu();
@@ -63,6 +64,8 @@ public abstract class AbsLiga {
         if(!(obj instanceof AbsLiga)) return false;
         return naziv.equals(((AbsLiga)obj).getNaziv());
     }
+
+
 
     public boolean isFull(){
         return !(size<sizeMax);

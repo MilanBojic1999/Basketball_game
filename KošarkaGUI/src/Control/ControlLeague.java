@@ -1,14 +1,19 @@
 package Control;
 
 import Model.Objects.AbsLiga;
+import Model.Test;
 import View.AllMatchesWindow;
+import View.CostumPanes.PlayOffView;
 import View.NapraviNoviTimWindow;
 import View.UpravljajLigom;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
-public class ControlLeague implements EventHandler<ActionEvent> {
+public class ControlLeague implements EventHandler<KeyEvent> {
     AbsLiga liga;
     UpravljajLigom view;
 
@@ -18,7 +23,9 @@ public class ControlLeague implements EventHandler<ActionEvent> {
     }
 
     @Override
-    public void handle(ActionEvent event) {
+    public void handle(KeyEvent event) {
+        if(event.getCode() != KeyCode.ENTER && event.getCode() != KeyCode.SPACE)
+            return;
         int selectedIndex=view.getSelectedIndex();
         switch (selectedIndex){
             case 0:
@@ -41,6 +48,12 @@ public class ControlLeague implements EventHandler<ActionEvent> {
                 break;
             case 4:
                 new AllMatchesWindow(liga.getMecevi());
+                break;
+            case 5:
+                liga.napraviPlayOff();
+                PlayOffView playOffView=new PlayOffView(liga);
+                playOffView.populateListView(liga.getMecevi());
+                Test.setSceneOntoStage(new Scene(playOffView));
                 break;
 
         }
